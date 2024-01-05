@@ -46,7 +46,7 @@ export default {
 		modelValue: Object,
 		labels: { type: Object, default: undefined },
 	},
-	emits: ["update:modelValue"],
+	emits: ["update:model-value"],
 	components: {
 		FontAwesomeIcon,
 		OpenwbNestedList,
@@ -63,7 +63,7 @@ export default {
 			},
 			set(newValue) {
 				console.debug("update in sortableList", newValue);
-				this.$emit("update:modelValue", newValue);
+				this.$emit("update:model-value", newValue);
 			},
 		},
 	},

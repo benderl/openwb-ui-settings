@@ -64,7 +64,7 @@ export default {
 		precision: { type: Number, default: undefined },
 		emptyValue: { required: false, default: null },
 	},
-	emits: ["update:modelValue"],
+	emits: ["update:model-value"],
 	data() {
 		return {
 			showHelp: false,
@@ -86,7 +86,7 @@ export default {
 				if (isNaN(newValue) || typeof newValue != "number") {
 					newValue = this.emptyValue;
 				}
-				this.$emit("update:modelValue", newValue);
+				this.$emit("update:model-value", newValue);
 			},
 		},
 	},

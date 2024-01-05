@@ -60,7 +60,7 @@ describe("OpenwbBaseArrayInput.vue", () => {
 			".input-group-append font-awesome-icon-stub",
 		);
 		await renderedAddButton.trigger("click");
-		expect(wrapper.emitted("update:modelValue")[0]).toStrictEqual([
+		expect(wrapper.emitted("update:model-value")[0]).toStrictEqual([
 			[newTag],
 		]);
 	});

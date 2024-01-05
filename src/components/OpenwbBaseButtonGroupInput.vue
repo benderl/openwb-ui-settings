@@ -70,7 +70,7 @@ export default {
 		modelValue: { type: [String, Number, Boolean] },
 		buttons: Object,
 	},
-	emits: ["update:modelValue"],
+	emits: ["update:model-value"],
 	data() {
 		return {
 			showHelp: false,
@@ -82,7 +82,7 @@ export default {
 				return this.modelValue;
 			},
 			set(newValue) {
-				this.$emit("update:modelValue", newValue);
+				this.$emit("update:model-value", newValue);
 			},
 		},
 	},
