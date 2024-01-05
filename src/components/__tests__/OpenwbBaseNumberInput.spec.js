@@ -65,6 +65,6 @@ describe("OpenwbBaseNumberInput.vue", () => {
 		});
 		const renderedInput = wrapper.find("input[type=number]");
 		await renderedInput.setValue(10);
-		expect(wrapper.emitted("update:modelValue")[0]).toStrictEqual([10]);
+		expect(wrapper.emitted("update:model-value")[0]).toStrictEqual([10]);
 	});
 });

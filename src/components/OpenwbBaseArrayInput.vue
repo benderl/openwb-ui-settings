@@ -120,7 +120,7 @@ export default {
 			},
 		},
 	},
-	emits: ["update:modelValue"],
+	emits: ["update:model-value"],
 	data() {
 		return {
 			newTag: "",
@@ -133,7 +133,7 @@ export default {
 				return this.modelValue;
 			},
 			set(newValue) {
-				this.$emit("update:modelValue", newValue);
+				this.$emit("update:model-value", newValue);
 			},
 		},
 		newTagValid: {

@@ -272,7 +272,7 @@ export default {
 		emptyValue: { required: false, default: null },
 		showQuickButtons: { type: Boolean, default: false },
 	},
-	emits: ["update:modelValue"],
+	emits: ["update:model-value"],
 	data() {
 		return {
 			showHelp: false,
@@ -301,7 +301,7 @@ export default {
 						this.inputInvalid = false;
 						this.$refs.jsonInput.setCustomValidity("");
 						this.tempValue = myNewJsonValue;
-						this.$emit("update:modelValue", myNewJsonValue);
+						this.$emit("update:model-value", myNewJsonValue);
 					} catch (e) {
 						console.error("parsing JSON failed: " + newValue);
 						this.inputInvalid = true;
@@ -314,7 +314,7 @@ export default {
 					if (newValue == "") {
 						newValue = this.emptyValue;
 					}
-					this.$emit("update:modelValue", newValue);
+					this.$emit("update:model-value", newValue);
 				}
 			},
 		},

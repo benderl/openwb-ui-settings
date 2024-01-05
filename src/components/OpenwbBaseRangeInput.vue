@@ -81,7 +81,7 @@ export default {
 		step: { type: Number, default: 1 },
 		labels: { type: Array },
 	},
-	emits: ["update:modelValue"],
+	emits: ["update:model-value"],
 	data() {
 		return {
 			showHelp: false,
@@ -150,9 +150,9 @@ export default {
 			set(newSliderValue) {
 				if (this.labels) {
 					var myValue = this.labels[newSliderValue].value;
-					this.$emit("update:modelValue", myValue);
+					this.$emit("update:model-value", myValue);
 				} else {
-					this.$emit("update:modelValue", newSliderValue);
+					this.$emit("update:model-value", newSliderValue);
 				}
 			},
 		},

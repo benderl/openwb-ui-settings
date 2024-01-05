@@ -62,6 +62,6 @@ describe("OpenwbBaseButtonGroupInput.vue", () => {
 		});
 		const renderedButtons = wrapper.findAll("input[type=radio]");
 		await renderedButtons[0].setValue(1);
-		expect(wrapper.emitted("update:modelValue")[0]).toStrictEqual([1]);
+		expect(wrapper.emitted("update:model-value")[0]).toStrictEqual([1]);
 	});
 });

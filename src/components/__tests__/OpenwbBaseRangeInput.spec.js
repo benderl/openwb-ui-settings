@@ -71,12 +71,12 @@ describe("OpenwbBaseRangeInput.vue", () => {
 		const renderedButtons = wrapper.findAll("button");
 		// click decrement button
 		await renderedButtons[0].trigger("click");
-		expect(wrapper.emitted("update:modelValue")[0]).toStrictEqual([10]);
+		expect(wrapper.emitted("update:model-value")[0]).toStrictEqual([10]);
 		// click increment button
 		await renderedButtons[1].trigger("click");
-		expect(wrapper.emitted("update:modelValue")[1]).toStrictEqual([20]);
+		expect(wrapper.emitted("update:model-value")[1]).toStrictEqual([20]);
 		// direct input
 		await renderedInput.setValue(10);
-		expect(wrapper.emitted("update:modelValue")[2]).toStrictEqual([10]);
+		expect(wrapper.emitted("update:model-value")[2]).toStrictEqual([10]);
 	});
 });
