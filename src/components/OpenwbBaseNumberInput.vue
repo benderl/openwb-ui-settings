@@ -44,6 +44,7 @@
 </template>
 
 <script>
+// ToDo: https://github.com/kevinongko/vue-numeric/blob/master/src/vue-numeric.vue
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
 	faQuestionCircle as fasQuestionCircle,
