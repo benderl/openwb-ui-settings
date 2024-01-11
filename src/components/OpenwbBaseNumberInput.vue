@@ -41,8 +41,9 @@
 </template>
 
 <script>
-import OpenwbBaseSettingElement from "./OpenwbBaseSettingElement.vue";
+// ToDo: https://github.com/kevinongko/vue-numeric/blob/master/src/vue-numeric.vue
 
+import OpenwbBaseSettingElement from "./OpenwbBaseSettingElement.vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCalculator as fasCalculator } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
