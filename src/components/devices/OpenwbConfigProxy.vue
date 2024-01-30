@@ -1,11 +1,15 @@
 <template>
 	<component
 		:is="myComponent"
-		:configuration="configuration"
-		:deviceId="deviceId"
-		:deviceType="deviceType"
-		:componentId="componentId"
-		:componentType="componentType"
+		:device="device"
+		:component="component"
+		:configuration="
+			component ? component.configuration : device.configuration
+		"
+		:deviceId="device.id"
+		:deviceType="device.type"
+		:componentId="component ? component.id : undefined"
+		:componentType="component ? component.type : undefined"
 		@update:configuration="updateConfiguration($event)"
 	/>
 </template>
@@ -18,28 +22,25 @@ export default {
 	name: "OpenwbConfigProxy",
 	emits: ["update:configuration"],
 	props: {
-		deviceId: { required: true },
-		deviceType: { type: String, required: true },
-		componentId: { default: undefined },
-		componentType: { type: String, default: undefined },
-		configuration: { type: Object, required: true },
+		device: { type: Object, required: true },
+		component: { type: Object, required: false, default: undefined },
 	},
 	computed: {
 		myComponent() {
 			console.debug(
-				`loading component: ${this.deviceType} / ${this.componentType}`,
+				`loading component: ${this.device.type} / ${this.component?.type}`
 			);
-			if (this.componentType !== undefined) {
+			if (this.component !== undefined) {
 				return defineAsyncComponent({
 					loader: () =>
 						import(
-							`./${this.deviceType}/${this.componentType}.vue`
+							`./${this.device.type}/${this.component.type}.vue`
 						),
 					errorComponent: OpenwbDeviceConfigFallback,
 				});
 			} else {
 				return defineAsyncComponent({
-					loader: () => import(`./${this.deviceType}/device.vue`),
+					loader: () => import(`./${this.device.type}/device.vue`),
 					errorComponent: OpenwbDeviceConfigFallback,
 				});
 			}
