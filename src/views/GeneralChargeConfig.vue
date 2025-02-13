@@ -84,13 +84,14 @@
             @update:model-value="updateState('openWB/general/chargemode_config/phase_switch_delay', $event)"
           >
             <template #help>
-              Um zu viele Umschaltungen zu vermeiden, wird mindestens die hier eingestellte Zeit zwischen zwei
-              Umschaltungen abgewartet. Das Umschalten auf mehrphasiges Laden erfolgt nur, wenn mit der maximalen
-              Stromstärke geladen wird und genug Leistung für mehrphasiges Laden zur Verfügung steht. Auf einphasiges
-              Laden wird zurückgeschaltet, wenn auf die minimale Stromstärke heruntergeregelt wurde. Die Verzögerung
-              wird nur bei der automatischen Phasenumschaltung bei Überschuss-Laden abgewartet.<br />
-              Ist ausreichend Überschuss vorhanden, wird beim Ladestart die Umschaltverzögerung nicht abgewartet,
-              sondern direkt mit mehrphasiger Ladung begonnen.
+              Um zu viele Phasenumschaltungen zu vermeiden (Beanspruchung der Schütze), wird mindestens die hier
+              eingestellte Zeit zwischen zwei Umschaltungen abgewartet. Das Umschalten von ein- auf mehrphasiges Laden
+              erfolgt nur, wenn mit der maximalen Stromstärke bei einphasig geladen wird und genug Leistung für
+              mehrphasiges Laden zur Verfügung steht. Auf einphasiges Laden wird zurückgeschaltet, wenn zuvor bei
+              mehrphasigem Laden auf die minimale Stromstärke heruntergeregelt wurde. Die Verzögerung wird nur bei der
+              automatischen Phasenumschaltung bei Überschuss-Laden abgewartet.<br />
+              Ist von Anbeginn ausreichend Überschuss vorhanden, wird direkt - ohne Umschaltverzögerung - mit
+              mehrphasiger Ladung begonnen.
             </template>
           </openwb-base-number-input>
           <hr />
